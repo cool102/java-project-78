@@ -11,7 +11,7 @@ public class NumberSchemaTest {
     @BeforeEach
     public final void setUp() {
         v = new Validator();
-        schema = new NumberSchema();
+        schema = v.number();
     }
 
     @Test
