@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class StringSchema {
+public class StringSchema extends BaseSchema {
 
     private String value;
     private List<Predicate<String>> tests = new ArrayList<>();
