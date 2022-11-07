@@ -1,10 +1,16 @@
+
 plugins {
     id 'java'
     id 'checkstyle'
     id 'application'
     id 'jacoco'
+    id 'com.adarshr.test-logger' version '3.2.0'
 }
 
+
+testlogger {
+    theme 'standard'
+}
 group 'hexlet.code'
 version '1.0-SNAPSHOT'
 
