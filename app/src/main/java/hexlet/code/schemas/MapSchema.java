@@ -1,4 +1,4 @@
-package hexlet.code;
+package hexlet.code.schemas;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ public class MapSchema extends BaseSchema {
     private List<Predicate<Map<Object, Object>>> tests = new ArrayList<Predicate<Map<Object, Object>>>();
 
 
-    final boolean isValid(Object value) {
+    public final boolean isValid(Object value) {
         if (!tests.isEmpty() || value != null) {
             for (Predicate<Map<Object, Object>> currentCheck : tests) {
                 boolean passed = currentCheck.test((Map<Object, Object>) value);
