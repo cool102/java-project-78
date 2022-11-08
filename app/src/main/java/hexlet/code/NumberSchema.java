@@ -29,7 +29,7 @@ public class NumberSchema extends BaseSchema {
     }
 
     public final NumberSchema positive() {
-        Predicate<Object> predicate = o -> o != null && o instanceof Integer && (int) o > 0;
+        Predicate<Object> predicate = o -> o == null ? true : o instanceof Integer && (int) o > 0;
         tests.add(predicate);
         return this;
     }

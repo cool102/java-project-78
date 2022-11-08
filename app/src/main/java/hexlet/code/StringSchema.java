@@ -6,11 +6,12 @@ import java.util.function.Predicate;
 
 public class StringSchema extends BaseSchema {
 
-    private String value;
+
     private List<Predicate<String>> tests = new ArrayList<>();
 
+
     public final boolean isValid(String input) {
-        this.value = input;
+        System.out.println();
         if (!tests.isEmpty()) {
             for (Predicate<String> currentCheck : tests) {
                 boolean passed = currentCheck.test(input);
@@ -24,19 +25,19 @@ public class StringSchema extends BaseSchema {
     }
 
     public final StringSchema required() {
-        Predicate<String> predicate = (v -> value != null && v.length() > 0);
+        Predicate<String> predicate = (value -> value != null && value.length() > 0);
         tests.add(predicate);
         return this;
     }
 
     public final StringSchema contains(String sample) {
-        Predicate<String> predicate = (v -> this.value.contains(sample));
+        Predicate<String> predicate = (v -> v.contains(sample));
         tests.add(predicate);
         return this;
     }
 
     public final StringSchema minLength(int minLength) {
-        Predicate<String> predicate = (v -> this.value.length() >= minLength);
+        Predicate<String> predicate = (v -> v.length() >= minLength);
         tests.add(predicate);
         return this;
     }
